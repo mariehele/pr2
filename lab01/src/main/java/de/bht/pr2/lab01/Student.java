@@ -5,22 +5,61 @@ public class Student {
   //-------------------------------------------
   // Attribute
   private String name = "";
+  private int matrikelnummer = 0;
+  private String studiengang = "";
 
-  // Matrikelnummer
-  private int registrationNumber = 0;
+  public static final int RUECKMELDUNG_GEBUEHR = 312;
 
-  // Medieninformatik, Technische Informatik, Druck- und Medientechnik und Screen Based Media
-  private String courseOfStudies = "";
+  //-------------------------------
+  // Konstruktor
+  // Passen Sie den Konstruktor an
+  //-------------------------------
+  public Student(String datenZeile) {
+    String stu[] = datenZeile.split(",",4);
+    name = stu[0];
+    studiengang = stu[2];
 
-  // Rückmeldegebühr
-  public static final int TUITION_FEE = 312;
+    if (stu[1].length() == 5){
+      matrikelnummer = Integer.parseInt(stu[1]);
+    }
+    else{
 
-  /**
-   * This contructor parses a comma-separated row describing a student object.
-   *
-   * @param dataRow a comma-separated row describing a student object
-   */
-  public Student(String dataRow) {
-    // TODO: Here goes your code ...
+      RegistrationNumberException rne = new RegistrationNumberException();
+      throw rne;
+
+    }
+
+  }
+
+  //-------------------------------------------
+  // Methoden
+  public int getMatrikelnummer() {
+    return matrikelnummer;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getStudiengang() {
+    return studiengang;
+  }
+
+  public void setMatrikelnummer(int matrikelnummer) {
+    this.matrikelnummer = matrikelnummer;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setStudiengang(String studiengang) {
+    this.studiengang = studiengang;
+  }
+
+  public String toString() {
+    return "name: " + nameNotPaidTuitionFeeException
+        + ", matrikelnummer: " + matrikelnummer +
+        ", studiengang:" + studiengang;
   }
 }
