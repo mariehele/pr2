@@ -5,8 +5,8 @@ import java.util.List;
 
 public class MainProgramm {
 	
-	public static void main(String[] args) {
-		// Daten fuer Studierenden als Strings
+	public static void main(String[] args){
+		// Daten für Studierenden als Strings
 		List<String> daten = new ArrayList<String>();
 		daten.add("Anna Alt,70001,Medieninformatik,312");
 		daten.add("Bob Berg,70002,Technische Informatik,312");
@@ -37,22 +37,31 @@ public class MainProgramm {
 		// Eine leere Liste von Student-Objekte erzeugen
 		List<Student> studenten = new ArrayList<Student>();
 		
-		// Zeile fuer Zeile mit den Daten arbeiten,
-		// damit einen Student-Objekt erzeugen und in die
-		// Liste einfuegen
+		// Zeile für Zeile mit den Daten arbeiten,
+		// damit ein Student-Objekt erzeugen und in die
+		// Liste einfügen
 		for (String datenZeile : daten) {
 			//---------------------------
-			// Beginn: Schreiben bzw. aendern Sie den Code AB hier
+			// Beginn: Schreiben bzw. ändern Sie den Code AB hier
 			//---------------------------
-			Student student = new Student(datenZeile);
-			studenten.add(student);
-			
+			try {
+				Student student = new Student(datenZeile);
+				studenten.add(student);
+			} catch (StudentParseException s) {
+				System.out.println(s);
+			} catch (NotPaidTuitionFeeException n) {
+				System.out.println(n);
+			} catch (RegistrationNumberException r) {
+				System.out.println(r);
+			} catch (WrongCourseOfStudiesException w) {
+				System.out.println(w);
+			}
 			//---------------------------
-			// Ende: Schreiben bzw. aendern Sie den Code BIS hier
+			// Ende: Schreiben bzw. ändern Sie den Code BIS hier
 			//---------------------------
 		}
 		
-		// Zur Bestaetigung, die Liste in der Console drucken
+		// Zur Bestätigung, die Liste in der Console drucken
 		System.out.println("Liste von Student-Objekten:");
 		for (Student student : studenten) {
 			System.out.println(student);

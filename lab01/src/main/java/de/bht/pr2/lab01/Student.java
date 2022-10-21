@@ -14,11 +14,12 @@ public class Student {
   // Konstruktor
   // Passen Sie den Konstruktor an
   //-------------------------------
-  public Student(String datenZeile) {
+  public Student(String datenZeile) throws NotPaidTuitionFeeException, WrongCourseOfStudiesException, StudentParseException, RegistrationNumberException {
     String[] stu = datenZeile.split(",",4);
 
     if (stu.length != 4){
       StudentParseException spe = new StudentParseException(datenZeile);
+      throw spe;
     }
 
     name = stu[0];
@@ -29,10 +30,12 @@ public class Student {
     }
     else{
       RegistrationNumberException rne = new RegistrationNumberException(stu[1]);
+      throw rne;
     }
 
     if (stu[2] != "Medieninformatik" && stu[2] != "Technische Informatik" && stu[2] != "Druck- und Medientechnik" && stu[2] != "Screen Based Media" ){
       WrongCourseOfStudiesException wcs = new WrongCourseOfStudiesException(stu[2]);
+      throw wcs;
     }
     else {
       studiengang = stu[2];
@@ -40,12 +43,20 @@ public class Student {
 
     if (stu[3] != "312"){
       NotPaidTuitionFeeException nptf = new NotPaidTuitionFeeException(stu[3]);
+      throw nptf;
     }
 
   }
 
   //-------------------------------------------
   // Methoden
+
+
+  /* public void parseStudent(){
+
+  } */
+
+
   public int getMatrikelnummer() {
     return matrikelnummer;
   }

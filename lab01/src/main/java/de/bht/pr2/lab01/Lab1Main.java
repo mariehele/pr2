@@ -39,18 +39,27 @@ public class Lab1Main {
     data.add("Zoe Zoo,70026,Technische Informatik,312");
 
     // Create a list of Student-Objects
-    List<Student> students = new ArrayList<Student>();
+    List<Student> studenten = new ArrayList<Student>();
 
     // Parse each line ...
     for (String datenZeile : data) {
-      // ... and try to create a Student object
-      Student student = new Student(datenZeile);
-      students.add(student);
+      try {
+				Student student = new Student(datenZeile);
+				studenten.add(student);
+			} catch (StudentParseException s) {
+				System.out.println(s);
+			} catch (NotPaidTuitionFeeException n) {
+				System.out.println(n);
+			} catch (RegistrationNumberException r) {
+				System.out.println(r);
+			} catch (WrongCourseOfStudiesException w) {
+				System.out.println(w);
+			}
     }
 
     // Print all students which could be parsed
     System.out.println("List of Student objects:");
-    for (Student student : students) {
+    for (Student student : studenten) {
       System.out.println(student);
     }
   }
