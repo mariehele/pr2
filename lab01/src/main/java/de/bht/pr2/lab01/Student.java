@@ -33,15 +33,15 @@ public class Student {
       throw rne;
     }
 
-    if (stu[2] != "Medieninformatik" && stu[2] != "Technische Informatik" && stu[2] != "Druck- und Medientechnik" && stu[2] != "Screen Based Media" ){
+    if (stu[2].equals("Medieninformatik")|| stu[2].equals("Technische Informatik") || stu[2].equals( "Druck- und Medientechnik" ) || stu[2].equals("Screen Based Media") ){
+      studiengang = stu[2];
+    }
+    else {
       WrongCourseOfStudiesException wcs = new WrongCourseOfStudiesException(stu[2]);
       throw wcs;
     }
-    else {
-      studiengang = stu[2];
-    }
 
-    if (stu[3] != "312"){
+    if (stu[3].equals("312") == false){
       NotPaidTuitionFeeException nptf = new NotPaidTuitionFeeException(stu[3]);
       throw nptf;
     }
