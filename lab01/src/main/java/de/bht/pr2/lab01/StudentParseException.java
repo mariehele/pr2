@@ -1,9 +1,9 @@
 package de.bht.pr2.lab01;
 
-public class StudentParseException {
+public class StudentParseException extends Exception{
 
-    public StudentParseException (){
-
+    public StudentParseException (String zeile){
+        super("Die Daten sind nicht vollständig angegeben. Die falsche Zeile ist die folgende: " + zeile);
     }
 
 }
