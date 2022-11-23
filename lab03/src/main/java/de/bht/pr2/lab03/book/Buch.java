@@ -1,4 +1,4 @@
-package de.bht.pr2.lab03.part1;
+package de.bht.pr2.lab03.book;
 
 public class Buch {
 

@@ -1,9 +1,8 @@
 package de.bht.pr2.lab03.part1;
 
 import de.bht.pr2.lab03.store.BookStore;
-import de.bht.pr2.lab03.part1.Buch;
+import de.bht.pr2.lab03.book.Buch;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SumPrices {
