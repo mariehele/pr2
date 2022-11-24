@@ -15,31 +15,12 @@ public class SumPrices {
     Summe Hoerbuch: € 344.58
     Summe Alle:     € 982.28
    */
-    List<String> store = BookStore.getSoldBooks();
 
     double summeB = 0;
     double summeE = 0;
     double summeH = 0;
 
-    for (int i = 0; i<store.size(); i++){
-      String s = store.get(i);
-      Buch book = new Buch (s);
 
-
-      String[] components = s.split(";");
-
-      if (components[1].equals("Buch")){
-        summeB = summeB + Double.parseDouble(components[2]);
-      }
-      else if (components[1].equals("Ebuch")) {
-        summeE = summeE + Double.parseDouble(components[2]);
-      }
-      else if (components[1].equals("Hoerbuch")){
-        summeH = summeH + Double.parseDouble(components[2]);
-      }
-
-
-    }
     double sumB = Math.round(summeB * 100000);
     double sumE = Math.round(summeE * 100000);
     double sumH = Math.round(summeH * 100000);

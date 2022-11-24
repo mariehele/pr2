@@ -1,7 +1,5 @@
 package de.bht.pr2.lab03.store;
 
-import de.bht.pr2.lab03.book.Buch;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,20 +65,4 @@ public class BookStore {
 
     return data;
   }
-
-  public static void parseBook(int i){
-    String[] book = new String[4];
-    book = getSoldBooks().get(i).split(";");
-    if (book[1].equals("Buch")){
-      Buch buch = new Buch(getSoldBooks().get(i));
-    }
-    else if(book[1].equals("Hörbuch")){
-
-    }
-    else if(book[1].equals("EBuch")){
-
-    }
-
-  }
-
 }
