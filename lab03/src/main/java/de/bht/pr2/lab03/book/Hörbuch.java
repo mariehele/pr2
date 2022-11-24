@@ -3,8 +3,8 @@ package de.bht.pr2.lab03.book;
 public class Hörbuch extends Buch {
 
     private String stream;
-    public Hörbuch(String buch, String stream) {
-        super(buch);
+    public Hörbuch(String title, String type, String price, String stream) {
+        super(title, type, price);
         this.stream = stream;
     }
 

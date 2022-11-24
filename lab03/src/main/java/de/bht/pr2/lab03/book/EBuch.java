@@ -4,8 +4,8 @@ public class EBuch extends Buch {
 
     private String version;
 
-    public EBuch(String buch, String version) {
-        super(buch);
+    public EBuch(String title, String type, String price, String version) {
+        super(title, type, price);
         this.version = version;
     }
 

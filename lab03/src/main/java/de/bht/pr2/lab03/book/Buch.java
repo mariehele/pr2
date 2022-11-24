@@ -6,13 +6,11 @@ public class Buch {
     private String type;
     private String price;
 
-    public Buch(String buch) {
+    public Buch(String title, String type, String price) {
 
-       String[] book = buch.split(";");
-
-       title = book[0];
-       type = book[1];
-       price = book[2];
+       this.title = title;
+       this.type = type;
+       this.price = price;
 
     }
 
