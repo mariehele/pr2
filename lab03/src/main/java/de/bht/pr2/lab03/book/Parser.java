@@ -22,7 +22,6 @@ public class Parser {
         else if(book[1].equals("Ebuch")){
             buch = new EBuch(book[0], book[1], book[2], book[3], book[4]);
         }
-        System.out.println(buch.getType());
         return buch;
     }
 

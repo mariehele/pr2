@@ -41,45 +41,46 @@ Hoerbuecher Anzahl: 5
 
     for(int i=0; i<books.size(); i++) {
       Buch b = books.get(i);
+      String ti = books.get(i).getTitle();
       String t = books.get(i).getType();
       String y = books.get(i).getYear();
-      int doppelt = 0;
+      boolean doppelt = false;
 
       if(t.equals("Buch")){
         for (Buch bu: buecher)
         {
-          if(bu.getYear().equals(y)){
-            doppelt++;
+          if(bu.getYear().equals(y) && bu.getTitle().equals(ti)){
+            doppelt = true;
           }
         }
-        if (doppelt == 0){
+        if (doppelt == false){
           buecher.add(b);
         }
-        else {doppelt = 0;}
+        else {doppelt = false;}
       }
       else if (t.equals("Hoerbuch")) {
         for (Buch bu: hbuecher)
         {
-          if(bu.getYear().equals(y)){
-            doppelt++;
+          if(bu.getYear().equals(y) && bu.getTitle().equals(ti)){
+            doppelt = true;
           }
         }
-        if (doppelt == 0){
+        if (doppelt == false){
           hbuecher.add(b);
         }
-        else {doppelt = 0;}
+        else {doppelt = false;}
       }
       else {
         for (Buch bu: ebuecher)
         {
-          if(bu.getYear().equals(y)){
-            doppelt++;
+          if(bu.getYear().equals(y) && bu.getTitle().equals(ti)){
+            doppelt = true;
           }
         }
-        if (doppelt == 0){
+        if (doppelt == false){
           ebuecher.add(b);
         }
-        else {doppelt = 0;}
+        else {doppelt = false;}
       }
     }
 

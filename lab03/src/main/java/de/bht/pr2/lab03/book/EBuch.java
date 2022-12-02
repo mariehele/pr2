@@ -45,10 +45,6 @@ public class EBuch extends Buch {
         return version;
     }
 
-    public void setVersion(String v){
-        version = v;
-    }
-
     public String getYear() {
         return year;
     }

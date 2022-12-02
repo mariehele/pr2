@@ -44,10 +44,6 @@ public class Hörbuch extends Buch {
         return stream;
     }
 
-    public void setStream(String s){
-        stream = s;
-    }
-
     public void setYear(String year) {
         this.year = year;
     }

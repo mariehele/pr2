@@ -75,7 +75,6 @@ public class BookStore {
 
     for (int i=0; i<getSoldBooks().size(); i++){
       books.add(parseBook(getSoldBooks().get(i)));
-      System.out.println(i +"  es wurde das Buch " + parseBook(getSoldBooks().get(i)).getTitle() +" zu books geadded.");
     }
 
     return books;
