@@ -46,6 +46,7 @@ public class SumPrices {
       }
     }
 
+
     double sumB = Math.round(summeB * 100000);
     double sumE = Math.round(summeE * 100000);
     double sumH = Math.round(summeH * 100000);

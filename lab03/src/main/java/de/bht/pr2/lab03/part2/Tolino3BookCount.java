@@ -16,6 +16,7 @@ public class Tolino3BookCount {
 
      */
 
+
     ArrayList<Buch> books = BookStore.getBooks();
     int anzahl = 0;
 

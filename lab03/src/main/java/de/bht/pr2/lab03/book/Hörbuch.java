@@ -7,6 +7,7 @@ public class Hörbuch extends Buch {
     private String price;
     private String stream;
     private String year;
+
     public Hörbuch(String title, String type, String price, String year, String stream) {
         super(title, type, price, year);
         this.title = title;

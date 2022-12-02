@@ -3,6 +3,7 @@ package de.bht.pr2.lab03.book;
 public class EBuch extends Buch {
 
     private String title;
+
     private String type;
     private String price;
     private String year;
