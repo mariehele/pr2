@@ -16,7 +16,6 @@ public class Hörbuch extends Buch {
         this.year = year;
         this.stream = stream;
     }
-
     public String getTitle(){
         return title;
     }

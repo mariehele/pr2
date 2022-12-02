@@ -5,7 +5,6 @@ import de.bht.pr2.lab03.book.EBuch;
 import de.bht.pr2.lab03.book.Hörbuch;
 
 import java.util.ArrayList;
-
 import static de.bht.pr2.lab03.store.BookStore.getSoldBooks;
 
 public class Parser {

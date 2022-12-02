@@ -30,7 +30,6 @@ public class StreamingAudioBookCount {
       }
 
     }
-
     System.out.println("Anzahl Hörbücher per Streaming: "+anzahl);
 
 

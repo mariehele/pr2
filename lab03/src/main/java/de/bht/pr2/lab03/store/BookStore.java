@@ -70,7 +70,6 @@ public class BookStore {
 
     return data;
   }
-
   public static ArrayList<Buch> getBooks(){
     ArrayList<Buch> books = new ArrayList<Buch>();;
 

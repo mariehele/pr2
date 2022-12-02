@@ -18,7 +18,6 @@ public class EBuch extends Buch {
         this. version = version;
 
     }
-
     public String getTitle(){
         return title;
     }
@@ -53,7 +52,6 @@ public class EBuch extends Buch {
     public String getYear() {
         return year;
     }
-
     public void setYear(String y){
         year = y;
     }

@@ -15,7 +15,6 @@ public class Buch {
        this.year = year;
 
     }
-
     public String getTitle(){
         return title;
     }

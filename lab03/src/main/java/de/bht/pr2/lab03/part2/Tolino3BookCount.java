@@ -31,7 +31,6 @@ public class Tolino3BookCount {
       }
 
     }
-
     System.out.println("Anzahl Ebuecher bei Tolino 3: "+anzahl);
 
   }
