@@ -1,6 +1,7 @@
 package de.bht.pr2.lab03.part2;
 
 import de.bht.pr2.lab03.book.Buch;
+import de.bht.pr2.lab03.book.EBuch;
 import de.bht.pr2.lab03.book.Hörbuch;
 import de.bht.pr2.lab03.store.BookStore;
 
@@ -20,12 +21,10 @@ public class Tolino3BookCount {
 
     for(int i=0; i<books.size(); i++) {
 
-      if (books.get(i) instanceof Hörbuch){
-        Hörbuch h = (Hörbuch)books.get(i);
-        String stream = h.getStream();
-
-        if (stream.equals("3")){
-          anzahl ++;
+      if (books.get(i) instanceof EBuch){
+        EBuch e = (EBuch)books.get(i);
+        if (e.getVersion().equals("3")){
+          anzahl = anzahl + 1;
         }
 
       }

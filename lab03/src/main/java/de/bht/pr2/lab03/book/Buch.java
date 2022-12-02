@@ -5,12 +5,14 @@ public class Buch {
     private String title;
     private String type;
     private String price;
+    private String year;
 
-    public Buch(String title, String type, String price) {
+    public Buch(String title, String type, String price, String year) {
 
        this.title = title;
        this.type = type;
        this.price = price;
+       this.year = year;
 
     }
 
@@ -36,5 +38,13 @@ public class Buch {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getYear() {
+        return year;
     }
 }

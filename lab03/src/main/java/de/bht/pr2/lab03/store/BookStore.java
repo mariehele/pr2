@@ -1,19 +1,17 @@
 package de.bht.pr2.lab03.store;
 
 import de.bht.pr2.lab03.book.Buch;
-import de.bht.pr2.lab03.book.EBuch;
-import de.bht.pr2.lab03.book.Hörbuch;
-import de.bht.pr2.lab03.part1.SumPrices;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static de.bht.pr2.lab03.book.Parser.parseBook;
+
 public class BookStore {
-
-
 
   public static List<String> getSoldBooks() {
     List<String> data = new ArrayList<>();
+
     // Formate:
     // Buch:     Titel ; Typ des Buches ; Preis ; Auflage
     // Ebuch:    Titel ; Typ des Buches ; Preis ; Auflage ; Tolino-Version
@@ -74,36 +72,15 @@ public class BookStore {
   }
 
   public static ArrayList<Buch> getBooks(){
+    ArrayList<Buch> books = new ArrayList<Buch>();;
 
-    List<String> store = getSoldBooks();
-    ArrayList<Buch> books = new ArrayList<>();
-
-
-    for (int i=0; i<store.size(); i++){
-
-      String[] st = store.get(i).split(";");
-
-      if(st[1].equals("Buch")){
-        Buch b = new Buch(st[0], st[1], st[2]);
-        books.add(b);
-      }
-      else if (st[1].equals("Hoerbuch")){
-        Hörbuch h = new Hörbuch(st[0], st[1], st[2], st[4]);
-        books.add(h);
-      }
-      else if (st[1].equals("Ebuch")){
-        EBuch e = new EBuch(st[0], st[1], st[2], st[4]);
-        books.add(e);
-      }
-
-
+    for (int i=0; i<getSoldBooks().size(); i++){
+      books.add(parseBook(getSoldBooks().get(i)));
+      System.out.println(i +"  es wurde das Buch " + parseBook(getSoldBooks().get(i)).getTitle() +" zu books geadded.");
     }
-
 
     return books;
   }
-
-
 
 
 }

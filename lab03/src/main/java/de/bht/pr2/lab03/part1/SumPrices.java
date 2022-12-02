@@ -30,20 +30,19 @@ public class SumPrices {
 
     for(int i=0; i<books.size(); i++){
 
-
-
-
-      if (books.get(i).getType().equals("Buch")){
-        summeB += Double.parseDouble(books.get(i).getPrice());
-        summeG += Double.parseDouble(books.get(i).getPrice());
-      }
-      else if (books.get(i).getType().equals("Hoerbuch")){
-        summeH += Double.parseDouble(books.get(i).getPrice());
-        summeG += Double.parseDouble(books.get(i).getPrice());
-      }
-      else if (books.get(i).getType().equals("Ebuch")){
-        summeE += Double.parseDouble(books.get(i).getPrice());
-        summeG += Double.parseDouble(books.get(i).getPrice());
+      switch (books.get(i).getType()) {
+        case "Buch" -> {
+          summeB += Double.parseDouble(books.get(i).getPrice());
+          summeG += Double.parseDouble(books.get(i).getPrice());
+        }
+        case "Hoerbuch" -> {
+          summeH += Double.parseDouble(books.get(i).getPrice());
+          summeG += Double.parseDouble(books.get(i).getPrice());
+        }
+        case "Ebuch" -> {
+          summeE += Double.parseDouble(books.get(i).getPrice());
+          summeG += Double.parseDouble(books.get(i).getPrice());
+        }
       }
     }
 

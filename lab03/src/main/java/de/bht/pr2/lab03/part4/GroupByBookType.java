@@ -1,5 +1,13 @@
 package de.bht.pr2.lab03.part4;
 
+import de.bht.pr2.lab03.book.Buch;
+import de.bht.pr2.lab03.book.EBuch;
+import de.bht.pr2.lab03.book.Hörbuch;
+import de.bht.pr2.lab03.store.BookStore;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class GroupByBookType {
 
   public static void main(String[] args) {
@@ -25,5 +33,70 @@ Hoerbuecher Anzahl: 5
 	Hoerbuch: Harry Potter - alle 7 Baende (2018)
 
      */
+
+    ArrayList<Buch> books = BookStore.getBooks();
+    List<Buch> buecher = new ArrayList<>();
+    List<Buch> hbuecher = new ArrayList<>();
+    List<Buch> ebuecher = new ArrayList<>();
+
+    for(int i=0; i<books.size(); i++) {
+      Buch b = books.get(i);
+      String t = books.get(i).getType();
+      String y = books.get(i).getYear();
+      int doppelt = 0;
+
+      if(t.equals("Buch")){
+        for (Buch bu: buecher)
+        {
+          if(bu.getYear().equals(y)){
+            doppelt++;
+          }
+        }
+        if (doppelt == 0){
+          buecher.add(b);
+        }
+        else {doppelt = 0;}
+      }
+      else if (t.equals("Hoerbuch")) {
+        for (Buch bu: hbuecher)
+        {
+          if(bu.getYear().equals(y)){
+            doppelt++;
+          }
+        }
+        if (doppelt == 0){
+          hbuecher.add(b);
+        }
+        else {doppelt = 0;}
+      }
+      else {
+        for (Buch bu: ebuecher)
+        {
+          if(bu.getYear().equals(y)){
+            doppelt++;
+          }
+        }
+        if (doppelt == 0){
+          ebuecher.add(b);
+        }
+        else {doppelt = 0;}
+      }
+    }
+
+    System.out.println("Buecher Anzahl: "+buecher.size());
+    for (Buch b : buecher) {
+          System.out.println("  Buch: "+b.getTitle()+" ("+b.getYear()+")");
+    }
+    System.out.println("Hörbücher Anzahl: "+hbuecher.size());
+    for (Buch b : hbuecher) {
+      System.out.println("  Hörbuch: "+b.getTitle()+" ("+b.getYear()+")");
+    }
+    System.out.println("Ebücher Anzahl: "+ebuecher.size());
+    for (Buch b : ebuecher) {
+      System.out.println("  Ebuch: "+b.getTitle()+" ("+b.getYear()+")");
+    }
+
+
+
   }
 }
