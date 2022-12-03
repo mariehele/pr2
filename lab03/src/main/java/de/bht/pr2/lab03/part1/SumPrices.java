@@ -27,21 +27,22 @@ public class SumPrices {
     double summeE = 0;
     double summeH = 0;
     double summeG = 0;
+    double s = 0;
 
     for(int i=0; i<books.size(); i++){
-
+      s = Double.parseDouble(books.get(i).getPrice());
       switch (books.get(i).getType()) {
         case "Buch" -> {
-          summeB += Double.parseDouble(books.get(i).getPrice());
-          summeG += Double.parseDouble(books.get(i).getPrice());
+          summeB += s;
+          summeG += s;
         }
         case "Hoerbuch" -> {
-          summeH += Double.parseDouble(books.get(i).getPrice());
-          summeG += Double.parseDouble(books.get(i).getPrice());
+          summeH += s;
+          summeG += s;
         }
         case "Ebuch" -> {
-          summeE += Double.parseDouble(books.get(i).getPrice());
-          summeG += Double.parseDouble(books.get(i).getPrice());
+          summeE += s;
+          summeG += s;
         }
       }
     }
